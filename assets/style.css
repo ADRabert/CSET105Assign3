@@ -18,10 +18,11 @@
 	margin-top: 2px;
 	width: 100%;
 } #rps-main button {
+	background-color: unset;
+	border: unset;
+	cursor: pointer;
 	font-size: 400%;
-	height: 96px;
 	margin: 0 8px 2px 8px;
-	width: 96px;
 } footer {
 	background-color: #36393c;
 	font-size: 125%;
