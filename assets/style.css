@@ -25,6 +25,7 @@
 	cursor: pointer;
 	font-size: 400%;
 	margin: 0 2% 2px 2%;
+	padding: 8px;
 } footer {
 	background-color: #36393c;
 	font-size: 125%;
