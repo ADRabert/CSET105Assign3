@@ -30,6 +30,8 @@
 	background-color: #090a0b;
 } button:active {
 	background-color: #050505;
+} p > strong {
+	font-size: 150%;
 } footer {
 	background-color: #36393c;
 	font-size: 125%;
