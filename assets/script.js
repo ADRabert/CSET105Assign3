@@ -1,14 +1,17 @@
-let playerScore = 0, cpuScore = 0;
+let playerScore = 0, cpuScore = 0, draws = 0;
 const resultdiv = document.getElementById("result"), newElem = (str) => {
 	const elem = document.createElement("p");
 	elem.innerHTML = str;
 	resultdiv.append(elem);
 }, rpsWin = () => {
-	newElem(`<strong>You win!<strong>`);
+	newElem(`<strong>You win!</strong>`);
 	playerScore++;
 }, rpsLose = () => {
-	newElem(`<strong>You lose.<strong>`);
+	newElem(`<strong>You lose.</strong>`);
 	cpuScore++;
+}, rpsDraw = () => {
+	newElem(`<strong>It's a draw.</strong>`)
+	draws++;
 }, rpsSelect = (choice) => {
 	if (resultdiv.innerHTML !== "") resultdiv.innerHTML = "";
 	newElem(`You selected ` + choice + `.`);
@@ -17,7 +20,7 @@ const resultdiv = document.getElementById("result"), newElem = (str) => {
 	else if (cpuInt === 1) var cpuChoice = "paper";
 	else var cpuChoice = "scissors";
 	newElem(`The opponent selected ` + cpuChoice + `.`);
-	if (choice === cpuChoice) newElem(`<strong>It's a draw.<strong>`);
+	if (choice === cpuChoice) rpsDraw();
 	else if (choice === "rock") {
 		if (cpuChoice === "paper") rpsLose();
 		else rpsWin();
@@ -28,5 +31,5 @@ const resultdiv = document.getElementById("result"), newElem = (str) => {
 		if (cpuChoice === "rock") rpsLose();
 		else rpsWin();
 	}
-	newElem(`Your score: ` + playerScore + `; Opponent's score: ` + cpuScore);
+	newElem(`Your score: ` + playerScore + `; Opponent's score: ` + cpuScore + `; Draws: ` + draws);
 }
